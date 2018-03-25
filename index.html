@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Native Component Example</title>
+</head>
+<body>
+
+    <h1>
+        <b>Alert!</b>
+        I'm out the template
+    </h1>
+
+    <template id="content">
+        <style>
+        h1{
+            color:yellowgreen;
+            background-color:green;
+        }
+        </style>
+
+        <h1>And me in the template that use the component :) and I'm more cool</h1>
+    </template>
+
+    <native-component></native-component>
+
+    <script type="text/javascript">
+        class ComponenteNativo extends HTMLElement{
+            constructor(){
+                super();
+                console.log("Hello native component");
+                var c = document.getElementById('content');
+                this.attachShadow({mode: 'open'}).innerHTML = c.innerHTML;
+            }
+        }
+        customElements.define('native-component', ComponenteNativo);
+    </script>
+</body>
+</html>
