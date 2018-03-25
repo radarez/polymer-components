@@ -1,1 +1,1 @@
-# My test with Polymer
+# My notes of Polymer and Web Components
